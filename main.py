@@ -119,7 +119,7 @@ def parse_data_create_report():
 	# Create report csv and headers
 	with open(report_path + 'abuse_report.csv', mode='w', newline="") as abuseipdb_report:
 		bdos_writer = csv.writer(abuseipdb_report, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-		bdos_writer.writerow(['IP Address' , 'Confidence of Abuse(AbuseIPDB)' , 'Fraud Score(IPQualityScore)','Proxy Status(IPQualityScore)','VPN Status(IPQualityScore)','TOR Status(IPQualityScore)','Bot Activity(IPQualityScore)','Recent Abuse(IPQualityScore)', 'Country(AbuseIPDB)' , 'Usage Type(AbuseIPDB)' , 'ISP(AbuseIPDB)' , 'Domain Name(AbuseIPDB)', 'Hosnames(AbuseIPDB)', 'Total Reports(AbuseIPDB)', 'Distinct Users(AbuseIPDB)' , 'Last reported(AbuseIPDB)'])
+		bdos_writer.writerow(['IP Address' , 'Confidence of Abuse' , 'Fraud Score','Proxy Status','VPN Status','TOR Status','Bot Activity','Recent Abuse', 'Country' , 'Usage Type' , 'ISP' , 'Domain Name', 'Hosnames', 'Total Reports', 'Distinct Users' , 'Last reported'])
 
 
 	for ip, ip_details in abuse_dic_raw_dict.items():
