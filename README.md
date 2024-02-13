@@ -16,7 +16,11 @@ The script queries two feeds https://www.abuseipdb.com/ and https://www.ipqualit
 3. Run main.py
 4. Read Abuse report under /Report/abuse_report.csv folder
 
-!!! Notes:
+
+# Version management
+V1.0 2/12/24
+
+- First release
 - V1.0 does not include IP format validation yet 
     Please make sure:
         - no empty lines exists in the ip_list.txt, 
@@ -27,10 +31,5 @@ The script queries two feeds https://www.abuseipdb.com/ and https://www.ipqualit
 - The ip_list.txt should include less than 1000 IP's (IPAbuse free tier allows querying no more than 1000 IP a day)
 - The script removes duplicate IP's from the list
 
-- V1.1 (2/13/24)
+V1.1 (2/13/24)
     Removed feed name from CSV headers
-
-# Version management
-V1.0 2/12/24
-
-- First release
