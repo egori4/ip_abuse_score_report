@@ -33,3 +33,6 @@ V1.0 2/12/24
 
 V1.1 (2/13/24)
     Removed feed name from CSV headers
+
+V1.1.1 (2/21/24)
+    Added certificate verification validation configurable set to False

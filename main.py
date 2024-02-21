@@ -3,6 +3,11 @@ import json
 import os
 import csv
 import mykey
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+
+# Suppress insecure request warnings
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 ###################### Variables ###################
 enable_proxy = False
@@ -80,10 +85,10 @@ def abuse_ip_db_call(ipAddress):
 	}
 
 	if enable_proxy:
-		response = requests.request(method='GET', url=url, headers=headers, params=querystring, proxies=proxy)
+		response = requests.request(method='GET', url=url, headers=headers, params=querystring, proxies=proxy, verify=False)
 
 	else:
-		response = requests.request(method='GET', url=url, headers=headers, params=querystring)
+		response = requests.request(method='GET', url=url, headers=headers, params=querystring, verify=False)
 
 	# Formatted output
 	decodedResponse = json.loads(response.text)
@@ -97,7 +102,7 @@ def ip_quality_score_call(ip):
 	url = f'https://ipqualityscore.com/api/json/ip/{mykey.ip_quality_score_api_key}/{ip}'
 
 	# Send the API request
-	response = requests.get(url)
+	response = requests.get(url, verify=False)
 
 	# Check if the request was successful
 	if response.status_code == 200:
